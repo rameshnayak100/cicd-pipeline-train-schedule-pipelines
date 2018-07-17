@@ -4,8 +4,8 @@ pipeline {
       stage('build'){
         steps {
           echo "jenkins Pipeline"
-          sh './gradlew build'
-          ar
+          sh './gradlew build --no-deamon'
+          archiveArtifacts artifacts: 'dist/trainSchedule.zip'
         }
       }
    }
